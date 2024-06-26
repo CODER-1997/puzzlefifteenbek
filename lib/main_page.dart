@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:puzzle_fifteen/game_screen.dart';
 import 'package:puzzle_fifteen/records_page.dart';
@@ -40,7 +41,11 @@ class MyHomePage extends StatelessWidget {
                 },
                 child: CustomButton(title: "ABOUT")),
             SizedBox(height: 20),
-            CustomButton(title: "QUIT"),
+            GestureDetector(
+              onTap: (){
+                SystemNavigator.pop();
+              },
+                child: CustomButton(title: "QUIT")),
           ],
         ),
       ),
